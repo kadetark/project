@@ -1,0 +1,292 @@
+.Filter-add {
+    position: absolute;
+    z-index: 1;
+    width: 445.5px;
+    height: 468px;
+    right: 247px;
+    top: 115px;
+    padding: 40px 48px 40px 48px;
+    box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.32);
+    background: $color-white;
+    display: flex;
+    justify-content: space-between;
+
+    &__content-left {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    &__content-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__content-box {
+        width: 190px;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    &__legend {
+        color: rgb(5, 5, 5);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        margin-bottom: 14px;
+
+        &_time {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__time-list {
+        color: $color-black;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+    }
+
+    &__rooms {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]+label {
+    position: relative;
+    padding-left: 29px;
+    cursor: pointer;
+}
+
+input[type="radio"]+label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 15px;
+    width: 15px;
+    box-sizing: border-box;
+    border: 1px solid rgb(136, 136, 136);
+    border-radius: 60px;
+    background: $color-white;
+}
+
+input[type="radio"]:checked+label::before {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+input[type="radio"]:checked+label::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 3px;
+    height: 6px;
+    width: 4px;
+    border: solid #000;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg) skew(15deg);
+}
+
+.range {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    height: 39px;
+
+    &__label {
+        color: $color-black;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+    }
+}
+
+input[type="range"] {
+    width: 190px;
+    height: 8px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    position: absolute;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    width: 190px;
+    height: 1px;
+    background: #000;
+}
+
+input[type="range"]:nth-child(2)::-webkit-slider-runnable-track {
+    background: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    position: relative;
+    height: 8px;
+    width: 8px;
+    margin-top: -4px;
+    background: #000;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.Filter-add__color {
+    width: 190px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: space-between;
+}
+
+.check-color {
+    height: 15px;
+    width: 15px;
+
+    &__white::before {
+        border: 1px solid rgb(136, 136, 136);
+        background: rgb(255, 255, 255);
+    }
+
+    &__black::before {
+        background: rgb(0, 0, 0);
+    }
+
+    &__grey::before {
+        background: rgb(115, 115, 115);
+    }
+
+    &__red::before {
+        background: rgb(255, 0, 0);
+    }
+
+    &__orange::before {
+        background: rgb(255, 122, 65);
+    }
+
+    &__yellow::before {
+        background: rgb(242, 203, 1)
+    }
+
+    &__green::before {
+        background: rgb(0, 191, 42)
+    }
+
+    &__teal::before {
+        background: #40e0d0;
+    }
+
+    &__light-blue::before {
+        background: #009fe3;
+    }
+
+    &__blue::before {
+        background: #00f;
+    }
+
+    &__purple::before {
+        background: #800080;
+    }
+
+    &__violet::before {
+        background: #8a2be2;
+    }
+
+    &__lavender::before {
+        background: #d89aff;
+    }
+
+    &__pink::before {
+        background: #ff1493;
+    }
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]+label {
+    position: relative;
+    padding-left: 29px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]+label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"]:checked+label::before {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+input[type="checkbox"]:checked {
+    &+label::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        height: 6px;
+        width: 4px;
+        border: solid #000;
+        border-width: 0 1px 1px 0;
+        transform: rotate(45deg) skew(15deg);
+    }
+
+    &+.check-color__black::after,
+    &+.check-color__blue::after,
+    &+.check-color__purple::after {
+        border-color: #fff;
+    }
+}
+
+.check-rooms {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+}
+
+.check-rooms__label::before {
+    border: 1px solid rgb(136, 136, 136);
+    background: rgb(255, 255, 255);
+}
+
+.Filter-add__button {
+    font: inherit;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    height: 40px;
+    width: 190px;
+    box-sizing: border-box;
+    border: 1px solid rgb(4, 4, 4);
+    border-radius: 20px;
+    background: transparent;
+    cursor: pointer;
+}

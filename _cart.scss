@@ -99,18 +99,18 @@
     }
 
     &__number {
+        font: inherit;
         width: 67px;
         height: 47px;
         border-radius: 6px;
         background: rgb(247, 246, 246);
         border-color: transparent;
-        color: $color-black;
-        font-family: Poppins;
+        color: $color-black;        
         font-size: 14px;
         font-weight: 600;
         line-height: 210%;
-        text-align: center;
-    }
+        text-align: center;        
+    }    
 
     &__nav {
         display: flex;
